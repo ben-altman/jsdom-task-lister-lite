@@ -14,6 +14,17 @@ function addListItem(event) {
 
   let li = document.createElement('li')
   li.innerText = newTask;
+
+  const deleteButton = document.createElement('button')
+  deleteButton.innerText = ("X");
+  deleteButton.addEventListener("click", e => {
+    // e.target.parentNode.remove(); // or do below:
+    li.remove();
+  })
+
+  li.appendChild(deleteButton);
+
   tasks.appendChild(li);
+
   event.target.reset();
 };
